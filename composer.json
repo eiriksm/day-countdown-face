@@ -1,0 +1,5 @@
+{
+    "name": "eiriksm/day-countdown-face",
+    "description": "Second Movement watch face that counts down the days to events read from the filesystem",
+    "license": "MIT"
+}
