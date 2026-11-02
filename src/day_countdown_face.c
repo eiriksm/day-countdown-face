@@ -172,9 +172,10 @@ static void draw(day_countdown_state_t *state) {
         snprintf(buf, sizeof(buf), "%02d%02d%02d", (int)(y % 100), (int)m, (int)d);
     } else {
         int32_t days = day - today;
-        if (days > 999999) days = 999999;
-        if (days < -99999) days = -99999;
-        snprintf(buf, sizeof(buf), "%6d", (int)days);
+        // Start the number at the minutes position, leaving the hours blank.
+        if (days > 9999) days = 9999;
+        if (days < -999) days = -999;
+        snprintf(buf, sizeof(buf), "  %-4d", (int)days);
     }
     watch_display_text(WATCH_POSITION_BOTTOM, buf);
     state->drawn_day = today;
